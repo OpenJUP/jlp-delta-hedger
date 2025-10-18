@@ -178,20 +178,3 @@ It is **not financial advice**. Use hedging strategies responsibly.
 
 Got ideas? Want to add Bybit/Kraken price hedging? API trading hooks? PRs welcome.
 Let’s build serious DeFi infrastructure together. 🧠⚡
-
----
-
-## 📜 License
-
-MIT — Open source forever.
-
-```
-
----
-
-If you want, I can also:
-✅ Add a project banner  
-✅ Add command examples using screenshots  
-✅ Publish to PyPI (`pip install jlp-delta-hedger-cli`)  
-Just say the word 🔥
-```
