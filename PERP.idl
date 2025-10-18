@@ -1,0 +1,7834 @@
+{
+  "accounts": [
+    {
+      "name": "BorrowPosition",
+      "type": {
+        "fields": [
+          {
+            "name": "owner",
+            "type": "publicKey"
+          },
+          {
+            "name": "pool",
+            "type": "publicKey"
+          },
+          {
+            "name": "custody",
+            "type": "publicKey"
+          },
+          {
+            "name": "openTime",
+            "type": "i64"
+          },
+          {
+            "name": "updateTime",
+            "type": "i64"
+          },
+          {
+            "name": "borrowSize",
+            "type": "u128"
+          },
+          {
+            "name": "cumulativeCompoundedInterestSnapshot",
+            "type": "u128"
+          },
+          {
+            "name": "lockedCollateral",
+            "type": "u64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          },
+          {
+            "name": "lastBorrowed",
+            "type": "i64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "Custody",
+      "type": {
+        "fields": [
+          {
+            "name": "pool",
+            "type": "publicKey"
+          },
+          {
+            "name": "mint",
+            "type": "publicKey"
+          },
+          {
+            "name": "tokenAccount",
+            "type": "publicKey"
+          },
+          {
+            "name": "decimals",
+            "type": "u8"
+          },
+          {
+            "name": "isStable",
+            "type": "bool"
+          },
+          {
+            "name": "oracle",
+            "type": {
+              "defined": "OracleParams"
+            }
+          },
+          {
+            "name": "pricing",
+            "type": {
+              "defined": "PricingParams"
+            }
+          },
+          {
+            "name": "permissions",
+            "type": {
+              "defined": "Permissions"
+            }
+          },
+          {
+            "name": "targetRatioBps",
+            "type": "u64"
+          },
+          {
+            "name": "assets",
+            "type": {
+              "defined": "Assets"
+            }
+          },
+          {
+            "name": "fundingRateState",
+            "type": {
+              "defined": "FundingRateState"
+            }
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          },
+          {
+            "name": "tokenAccountBump",
+            "type": "u8"
+          },
+          {
+            "name": "increasePositionBps",
+            "type": "u64"
+          },
+          {
+            "name": "decreasePositionBps",
+            "type": "u64"
+          },
+          {
+            "name": "maxPositionSizeUsd",
+            "type": "u64"
+          },
+          {
+            "name": "dovesOracle",
+            "type": "publicKey"
+          },
+          {
+            "name": "jumpRateState",
+            "type": {
+              "defined": "JumpRateState"
+            }
+          },
+          {
+            "name": "dovesAgOracle",
+            "type": "publicKey"
+          },
+          {
+            "name": "priceImpactBuffer",
+            "type": {
+              "defined": "PriceImpactBuffer"
+            }
+          },
+          {
+            "name": "borrowLendParameters",
+            "type": {
+              "defined": "BorrowLendParams"
+            }
+          },
+          {
+            "name": "borrowsFundingRateState",
+            "type": {
+              "defined": "FundingRateState"
+            }
+          },
+          {
+            "name": "debt",
+            "type": "u128"
+          },
+          {
+            "name": "borrowLendInterestsAccured",
+            "type": "u128"
+          },
+          {
+            "name": "borrowLimitInTokenAmount",
+            "type": "u64"
+          },
+          {
+            "name": "minInterestFeeBps",
+            "type": "u64"
+          },
+          {
+            "name": "minInterestFeeGracePeriodSeconds",
+            "type": "u64"
+          },
+          {
+            "name": "totalStakedAmountLamports",
+            "type": "u64"
+          },
+          {
+            "name": "maxTotalStakedAmountLamports",
+            "type": "u64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "Perpetuals",
+      "type": {
+        "fields": [
+          {
+            "name": "permissions",
+            "type": {
+              "defined": "Permissions"
+            }
+          },
+          {
+            "name": "pools",
+            "type": {
+              "vec": "publicKey"
+            }
+          },
+          {
+            "name": "admin",
+            "type": "publicKey"
+          },
+          {
+            "name": "transferAuthorityBump",
+            "type": "u8"
+          },
+          {
+            "name": "perpetualsBump",
+            "type": "u8"
+          },
+          {
+            "name": "inceptionTime",
+            "type": "i64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "Pool",
+      "type": {
+        "fields": [
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "custodies",
+            "type": {
+              "vec": "publicKey"
+            }
+          },
+          {
+            "name": "aumUsd",
+            "type": "u128"
+          },
+          {
+            "name": "limit",
+            "type": {
+              "defined": "Limit"
+            }
+          },
+          {
+            "name": "fees",
+            "type": {
+              "defined": "Fees"
+            }
+          },
+          {
+            "name": "poolApr",
+            "type": {
+              "defined": "PoolApr"
+            }
+          },
+          {
+            "name": "maxRequestExecutionSec",
+            "type": "i64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          },
+          {
+            "name": "lpTokenBump",
+            "type": "u8"
+          },
+          {
+            "name": "inceptionTime",
+            "type": "i64"
+          },
+          {
+            "name": "parameterUpdateOracle",
+            "type": {
+              "defined": "Secp256k1Pubkey"
+            }
+          },
+          {
+            "name": "aumUsdUpdatedAt",
+            "type": "i64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "PositionRequest",
+      "type": {
+        "fields": [
+          {
+            "name": "owner",
+            "type": "publicKey"
+          },
+          {
+            "name": "pool",
+            "type": "publicKey"
+          },
+          {
+            "name": "custody",
+            "type": "publicKey"
+          },
+          {
+            "name": "position",
+            "type": "publicKey"
+          },
+          {
+            "name": "mint",
+            "type": "publicKey"
+          },
+          {
+            "name": "openTime",
+            "type": "i64"
+          },
+          {
+            "name": "updateTime",
+            "type": "i64"
+          },
+          {
+            "name": "sizeUsdDelta",
+            "type": "u64"
+          },
+          {
+            "name": "collateralDelta",
+            "type": "u64"
+          },
+          {
+            "name": "requestChange",
+            "type": {
+              "defined": "RequestChange"
+            }
+          },
+          {
+            "name": "requestType",
+            "type": {
+              "defined": "RequestType"
+            }
+          },
+          {
+            "name": "side",
+            "type": {
+              "defined": "Side"
+            }
+          },
+          {
+            "name": "priceSlippage",
+            "type": {
+              "option": "u64"
+            }
+          },
+          {
+            "name": "jupiterMinimumOut",
+            "type": {
+              "option": "u64"
+            }
+          },
+          {
+            "name": "preSwapAmount",
+            "type": {
+              "option": "u64"
+            }
+          },
+          {
+            "name": "triggerPrice",
+            "type": {
+              "option": "u64"
+            }
+          },
+          {
+            "name": "triggerAboveThreshold",
+            "type": {
+              "option": "bool"
+            }
+          },
+          {
+            "name": "entirePosition",
+            "type": {
+              "option": "bool"
+            }
+          },
+          {
+            "name": "executed",
+            "type": "bool"
+          },
+          {
+            "name": "counter",
+            "type": "u64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          },
+          {
+            "name": "referral",
+            "type": {
+              "option": "publicKey"
+            }
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "Position",
+      "type": {
+        "fields": [
+          {
+            "name": "owner",
+            "type": "publicKey"
+          },
+          {
+            "name": "pool",
+            "type": "publicKey"
+          },
+          {
+            "name": "custody",
+            "type": "publicKey"
+          },
+          {
+            "name": "collateralCustody",
+            "type": "publicKey"
+          },
+          {
+            "name": "openTime",
+            "type": "i64"
+          },
+          {
+            "name": "updateTime",
+            "type": "i64"
+          },
+          {
+            "name": "side",
+            "type": {
+              "defined": "Side"
+            }
+          },
+          {
+            "name": "price",
+            "type": "u64"
+          },
+          {
+            "name": "sizeUsd",
+            "type": "u64"
+          },
+          {
+            "name": "collateralUsd",
+            "type": "u64"
+          },
+          {
+            "name": "realisedPnlUsd",
+            "type": "i64"
+          },
+          {
+            "name": "cumulativeInterestSnapshot",
+            "type": "u128"
+          },
+          {
+            "name": "lockedAmount",
+            "type": "u64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "StakeInfo",
+      "type": {
+        "fields": [
+          {
+            "name": "pool",
+            "type": "publicKey"
+          },
+          {
+            "name": "stakeAccount",
+            "type": "publicKey"
+          },
+          {
+            "name": "currentStakedAmountLamports",
+            "type": "u64"
+          },
+          {
+            "name": "totalStakingRewardsLamports",
+            "type": "u64"
+          },
+          {
+            "name": "lastUpdatedAt",
+            "type": "i64"
+          },
+          {
+            "name": "deactivating",
+            "type": "bool"
+          },
+          {
+            "name": "stakeAccountIndex",
+            "type": "u64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "TokenLedger",
+      "type": {
+        "fields": [
+          {
+            "name": "tokenAccount",
+            "type": "publicKey"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          }
+        ],
+        "kind": "struct"
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "msg": "Overflow in arithmetic operation",
+      "name": "MathOverflow"
+    },
+    {
+      "code": 6001,
+      "msg": "Unsupported price oracle",
+      "name": "UnsupportedOracle"
+    },
+    {
+      "code": 6002,
+      "msg": "Invalid oracle account",
+      "name": "InvalidOracleAccount"
+    },
+    {
+      "code": 6003,
+      "msg": "Stale oracle price",
+      "name": "StaleOraclePrice"
+    },
+    {
+      "code": 6004,
+      "msg": "Invalid oracle price",
+      "name": "InvalidOraclePrice"
+    },
+    {
+      "code": 6005,
+      "msg": "Instruction is not allowed in production",
+      "name": "InvalidEnvironment"
+    },
+    {
+      "code": 6006,
+      "msg": "Invalid collateral account",
+      "name": "InvalidCollateralAccount"
+    },
+    {
+      "code": 6007,
+      "msg": "Invalid collateral amount",
+      "name": "InvalidCollateralAmount"
+    },
+    {
+      "code": 6008,
+      "msg": "Collateral slippage",
+      "name": "CollateralSlippage"
+    },
+    {
+      "code": 6009,
+      "msg": "Invalid position state",
+      "name": "InvalidPositionState"
+    },
+    {
+      "code": 6010,
+      "msg": "Invalid perpetuals config",
+      "name": "InvalidPerpetualsConfig"
+    },
+    {
+      "code": 6011,
+      "msg": "Invalid pool config",
+      "name": "InvalidPoolConfig"
+    },
+    {
+      "code": 6012,
+      "msg": "Invalid instruction",
+      "name": "InvalidInstruction"
+    },
+    {
+      "code": 6013,
+      "msg": "Invalid custody config",
+      "name": "InvalidCustodyConfig"
+    },
+    {
+      "code": 6014,
+      "msg": "Invalid custody balance",
+      "name": "InvalidCustodyBalance"
+    },
+    {
+      "code": 6015,
+      "msg": "Invalid argument",
+      "name": "InvalidArgument"
+    },
+    {
+      "code": 6016,
+      "msg": "Invalid position request",
+      "name": "InvalidPositionRequest"
+    },
+    {
+      "code": 6017,
+      "msg": "Invalid position request input ata",
+      "name": "InvalidPositionRequestInputAta"
+    },
+    {
+      "code": 6018,
+      "msg": "Invalid mint",
+      "name": "InvalidMint"
+    },
+    {
+      "code": 6019,
+      "msg": "Insufficient token amount",
+      "name": "InsufficientTokenAmount"
+    },
+    {
+      "code": 6020,
+      "msg": "Insufficient token amount returned",
+      "name": "InsufficientAmountReturned"
+    },
+    {
+      "code": 6021,
+      "msg": "Price slippage limit exceeded",
+      "name": "MaxPriceSlippage"
+    },
+    {
+      "code": 6022,
+      "msg": "Position leverage limit exceeded",
+      "name": "MaxLeverage"
+    },
+    {
+      "code": 6023,
+      "msg": "Custody amount limit exceeded",
+      "name": "CustodyAmountLimit"
+    },
+    {
+      "code": 6024,
+      "msg": "Pool amount limit exceeded",
+      "name": "PoolAmountLimit"
+    },
+    {
+      "code": 6025,
+      "msg": "Personal pool amount limit exceeded",
+      "name": "PersonalPoolAmountLimit"
+    },
+    {
+      "code": 6026,
+      "msg": "Token is not supported",
+      "name": "UnsupportedToken"
+    },
+    {
+      "code": 6027,
+      "msg": "Instruction is not allowed at this time",
+      "name": "InstructionNotAllowed"
+    },
+    {
+      "code": 6028,
+      "msg": "Jupiter Program ID mismatch",
+      "name": "JupiterProgramMismatch"
+    },
+    {
+      "code": 6029,
+      "msg": "Program ID mismatch",
+      "name": "ProgramMismatch"
+    },
+    {
+      "code": 6030,
+      "msg": "Address mismatch",
+      "name": "AddressMismatch"
+    },
+    {
+      "code": 6031,
+      "msg": "Missing keeper ATA",
+      "name": "KeeperATAMissing"
+    },
+    {
+      "code": 6032,
+      "msg": "Swap amount mismatch",
+      "name": "SwapAmountMismatch"
+    },
+    {
+      "code": 6033,
+      "msg": "CPI not allowed",
+      "name": "CPINotAllowed"
+    },
+    {
+      "code": 6034,
+      "msg": "Invalid Keeper",
+      "name": "InvalidKeeper"
+    },
+    {
+      "code": 6035,
+      "msg": "Exceed execution period",
+      "name": "ExceedExecutionPeriod"
+    },
+    {
+      "code": 6036,
+      "msg": "Invalid Request Type",
+      "name": "InvalidRequestType"
+    },
+    {
+      "code": 6037,
+      "msg": "Invalid Trigger Price",
+      "name": "InvalidTriggerPrice"
+    },
+    {
+      "code": 6038,
+      "msg": "Trigger Price Slippage",
+      "name": "TriggerPriceSlippage"
+    },
+    {
+      "code": 6039,
+      "msg": "Missing Trigger Price",
+      "name": "MissingTriggerPrice"
+    },
+    {
+      "code": 6040,
+      "msg": "Missing Price Slippage",
+      "name": "MissingPriceSlippage"
+    },
+    {
+      "code": 6041,
+      "msg": "Invalid Price Calc Mode",
+      "name": "InvalidPriceCalcMode"
+    },
+    {
+      "code": 6042,
+      "msg": "Request Updated Too Recent",
+      "name": "RequestUpdatedTooRecent"
+    },
+    {
+      "code": 6043,
+      "msg": "Exceed Token Weightage",
+      "name": "ExceedTokenWeightage"
+    },
+    {
+      "code": 6044,
+      "msg": "Oracle Publish Time Too Early",
+      "name": "OraclePublishTimeTooEarly"
+    },
+    {
+      "code": 6045,
+      "msg": "Pull Oracle Publish Time Too Early",
+      "name": "PullOraclePublishTimeTooEarly"
+    },
+    {
+      "code": 6046,
+      "msg": "Stale Pull Oracle Price",
+      "name": "StalePullOraclePrice"
+    },
+    {
+      "code": 6047,
+      "msg": "Invalid Pull Oracle Price",
+      "name": "InvalidPullOraclePrice"
+    },
+    {
+      "code": 6048,
+      "msg": "Pull Oracle Not Verified",
+      "name": "PullOracleNotVerified"
+    },
+    {
+      "code": 6049,
+      "msg": "Price Diff Between Pull and Push Oracle is Too Large",
+      "name": "PriceDiffTooLarge"
+    },
+    {
+      "code": 6050,
+      "msg": "Invalid Doves Oracle Price",
+      "name": "InvalidDovesOraclePrice"
+    },
+    {
+      "code": 6051,
+      "msg": "Invalid Request Time",
+      "name": "InvalidRequestTime"
+    },
+    {
+      "code": 6052,
+      "msg": "Position Updated Too Recent",
+      "name": "PositionUpdatedTooRecent"
+    },
+    {
+      "code": 6053,
+      "msg": "Ledger token account does not match",
+      "name": "LedgerTokenAccountDoesNotMatch"
+    },
+    {
+      "code": 6054,
+      "msg": "Invalid token ledger",
+      "name": "InvalidTokenLedger"
+    },
+    {
+      "code": 6055,
+      "msg": "Oracle Price Difference Too Large",
+      "name": "OraclePriceDifferenceTooLarge"
+    },
+    {
+      "code": 6056,
+      "msg": "Invalid Oracle Signer",
+      "name": "InvalidOracleSigner"
+    },
+    {
+      "code": 6057,
+      "msg": "Invalid Oracle Timestamp",
+      "name": "InvalidOracleTimestamp"
+    },
+    {
+      "code": 6058,
+      "msg": "New Max Global Long Size Too Low",
+      "name": "InvalidMaxGlobalLongSize"
+    },
+    {
+      "code": 6059,
+      "msg": "New Max Global Short Size Too Low",
+      "name": "InvalidMaxGlobalShortSize"
+    },
+    {
+      "code": 6060,
+      "msg": "Borrows disabled for this custody",
+      "name": "BorrowsDisabled"
+    },
+    {
+      "code": 6061,
+      "msg": "Borrows limit exceeded for this custody",
+      "name": "BorrowLimitsExceeded"
+    },
+    {
+      "code": 6062,
+      "msg": "Withdraw exceeds margin of the custody",
+      "name": "WithdrawExceedsMarginLimits"
+    },
+    {
+      "code": 6063,
+      "msg": "Cannot liquidate",
+      "name": "CannotLiquidate"
+    },
+    {
+      "code": 6064,
+      "msg": "Cannot delegate stake to deactivated account",
+      "name": "CannotDelegateStake"
+    },
+    {
+      "code": 6065,
+      "msg": "Max total staked amount exceeded",
+      "name": "ExceededMaxTotalStakedAmount"
+    }
+  ],
+  "events": [
+    {
+      "fields": [
+        {
+          "index": false,
+          "name": "owner",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "pool",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionSide",
+          "type": "u8"
+        },
+        {
+          "index": false,
+          "name": "positionMint",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionCustody",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionCollateralMint",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionCollateralCustody",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionRequestKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionRequestMint",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "sizeUsdDelta",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "collateralDelta",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "priceSlippage",
+          "type": {
+            "option": "u64"
+          }
+        },
+        {
+          "index": false,
+          "name": "jupiterMinimumOut",
+          "type": {
+            "option": "u64"
+          }
+        },
+        {
+          "index": false,
+          "name": "preSwapAmount",
+          "type": {
+            "option": "u64"
+          }
+        },
+        {
+          "index": false,
+          "name": "requestChange",
+          "type": "u8"
+        },
+        {
+          "index": false,
+          "name": "openTime",
+          "type": "i64"
+        },
+        {
+          "index": false,
+          "name": "referral",
+          "type": {
+            "option": "publicKey"
+          }
+        }
+      ],
+      "name": "CreatePositionRequestEvent"
+    },
+    {
+      "fields": [
+        {
+          "index": false,
+          "name": "owner",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "pool",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionSide",
+          "type": "u8"
+        },
+        {
+          "index": false,
+          "name": "positionMint",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionCustody",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionCollateralCustody",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionRequestKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionRequestMint",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "sizeUsdDelta",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "collateralDelta",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "entirePosition",
+          "type": "bool"
+        },
+        {
+          "index": false,
+          "name": "openTime",
+          "type": "i64"
+        }
+      ],
+      "name": "InstantCreateTpslEvent"
+    },
+    {
+      "fields": [
+        {
+          "index": false,
+          "name": "owner",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "pool",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionSide",
+          "type": "u8"
+        },
+        {
+          "index": false,
+          "name": "positionMint",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionCustody",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionCollateralCustody",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionRequestKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionRequestMint",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "sizeUsdDelta",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "collateralDelta",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "entirePosition",
+          "type": "bool"
+        },
+        {
+          "index": false,
+          "name": "updateTime",
+          "type": "i64"
+        }
+      ],
+      "name": "InstantUpdateTpslEvent"
+    },
+    {
+      "fields": [
+        {
+          "index": false,
+          "name": "entirePosition",
+          "type": {
+            "option": "bool"
+          }
+        },
+        {
+          "index": false,
+          "name": "executed",
+          "type": "bool"
+        },
+        {
+          "index": false,
+          "name": "requestChange",
+          "type": "u8"
+        },
+        {
+          "index": false,
+          "name": "requestType",
+          "type": "u8"
+        },
+        {
+          "index": false,
+          "name": "side",
+          "type": "u8"
+        },
+        {
+          "index": false,
+          "name": "positionRequestKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "owner",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "mint",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "amount",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "openTime",
+          "type": "i64"
+        }
+      ],
+      "name": "ClosePositionRequestEvent"
+    },
+    {
+      "fields": [
+        {
+          "index": false,
+          "name": "positionKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionSide",
+          "type": "u8"
+        },
+        {
+          "index": false,
+          "name": "positionCustody",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionCollateralCustody",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionSizeUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "positionMint",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionRequestKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionRequestMint",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionRequestChange",
+          "type": "u8"
+        },
+        {
+          "index": false,
+          "name": "positionRequestType",
+          "type": "u8"
+        },
+        {
+          "index": false,
+          "name": "positionRequestCollateralDelta",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "owner",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "pool",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "sizeUsdDelta",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "collateralUsdDelta",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "collateralTokenDelta",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "price",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "priceSlippage",
+          "type": {
+            "option": "u64"
+          }
+        },
+        {
+          "index": false,
+          "name": "feeToken",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "feeUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "openTime",
+          "type": "i64"
+        },
+        {
+          "index": false,
+          "name": "referral",
+          "type": {
+            "option": "publicKey"
+          }
+        },
+        {
+          "index": false,
+          "name": "positionFeeUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "fundingFeeUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "priceImpactFeeUsd",
+          "type": "u64"
+        }
+      ],
+      "name": "IncreasePositionEvent"
+    },
+    {
+      "fields": [
+        {
+          "index": false,
+          "name": "positionRequestKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "transferAmount",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "collateralCustodyPreSwapAmount",
+          "type": "u64"
+        }
+      ],
+      "name": "IncreasePositionPreSwapEvent"
+    },
+    {
+      "fields": [
+        {
+          "index": false,
+          "name": "positionKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionSide",
+          "type": "u8"
+        },
+        {
+          "index": false,
+          "name": "positionCustody",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionCollateralCustody",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionSizeUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "positionMint",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionRequestKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionRequestMint",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionRequestChange",
+          "type": "u8"
+        },
+        {
+          "index": false,
+          "name": "positionRequestType",
+          "type": "u8"
+        },
+        {
+          "index": false,
+          "name": "hasProfit",
+          "type": "bool"
+        },
+        {
+          "index": false,
+          "name": "pnlDelta",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "owner",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "pool",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "sizeUsdDelta",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "transferAmountUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "transferToken",
+          "type": {
+            "option": "u64"
+          }
+        },
+        {
+          "index": false,
+          "name": "price",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "priceSlippage",
+          "type": {
+            "option": "u64"
+          }
+        },
+        {
+          "index": false,
+          "name": "feeUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "openTime",
+          "type": "i64"
+        },
+        {
+          "index": false,
+          "name": "referral",
+          "type": {
+            "option": "publicKey"
+          }
+        },
+        {
+          "index": false,
+          "name": "positionFeeUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "fundingFeeUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "priceImpactFeeUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "originalPositionCollateralUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "positionCollateralUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "positionOpenTime",
+          "type": "i64"
+        },
+        {
+          "index": false,
+          "name": "positionPrice",
+          "type": "u64"
+        }
+      ],
+      "name": "DecreasePositionEvent"
+    },
+    {
+      "fields": [
+        {
+          "index": false,
+          "name": "positionRequestKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "swapAmount",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "jupiterMinimumOut",
+          "type": {
+            "option": "u64"
+          }
+        }
+      ],
+      "name": "DecreasePositionPostSwapEvent"
+    },
+    {
+      "fields": [
+        {
+          "index": false,
+          "name": "positionKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionSide",
+          "type": "u8"
+        },
+        {
+          "index": false,
+          "name": "positionCustody",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionCollateralCustody",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionCollateralMint",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionMint",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionSizeUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "hasProfit",
+          "type": "bool"
+        },
+        {
+          "index": false,
+          "name": "pnlDelta",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "owner",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "pool",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "transferAmountUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "transferToken",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "price",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "feeUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "liquidationFeeUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "openTime",
+          "type": "i64"
+        },
+        {
+          "index": false,
+          "name": "positionFeeUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "fundingFeeUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "priceImpactFeeUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "originalPositionCollateralUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "positionCollateralUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "positionOpenTime",
+          "type": "i64"
+        },
+        {
+          "index": false,
+          "name": "positionPrice",
+          "type": "u64"
+        }
+      ],
+      "name": "LiquidateFullPositionEvent"
+    },
+    {
+      "fields": [
+        {
+          "index": false,
+          "name": "receivingCustodyKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "dispensingCustodyKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "poolKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "amountIn",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "amountOut",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "swapUsdAmount",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "amountOutAfterFees",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "feeBps",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "ownerKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "receivingAccountKey",
+          "type": "publicKey"
+        }
+      ],
+      "name": "PoolSwapEvent"
+    },
+    {
+      "fields": [
+        {
+          "index": false,
+          "name": "receivingCustodyKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "dispensingCustodyKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "poolKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "amountIn",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "amountInAfterFees",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "amountOut",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "swapUsdAmount",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "feeBps",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "ownerKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "receivingAccountKey",
+          "type": "publicKey"
+        }
+      ],
+      "name": "PoolSwapExactOutEvent"
+    },
+    {
+      "fields": [
+        {
+          "index": false,
+          "name": "custodyKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "poolKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "tokenAmountIn",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "prePoolAmountUsd",
+          "type": "u128"
+        },
+        {
+          "index": false,
+          "name": "tokenAmountUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "feeBps",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "tokenAmountAfterFee",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "mintAmountUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "lpAmount",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "postPoolAmountUsd",
+          "type": "u128"
+        }
+      ],
+      "name": "AddLiquidityEvent"
+    },
+    {
+      "fields": [
+        {
+          "index": false,
+          "name": "custodyKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "poolKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "lpAmountIn",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "removeAmountUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "feeBps",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "removeTokenAmount",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "tokenAmountAfterFee",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "postPoolAmountUsd",
+          "type": "u128"
+        }
+      ],
+      "name": "RemoveLiquidityEvent"
+    },
+    {
+      "fields": [
+        {
+          "index": false,
+          "name": "owner",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "pool",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionSide",
+          "type": "u8"
+        },
+        {
+          "index": false,
+          "name": "positionMint",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionCustody",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionCollateralMint",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionCollateralCustody",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionRequestKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionRequestMint",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "sizeUsdDelta",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "collateralDelta",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "openTime",
+          "type": "i64"
+        }
+      ],
+      "name": "InstantCreateLimitOrderEvent"
+    },
+    {
+      "fields": [
+        {
+          "index": false,
+          "name": "positionKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionSide",
+          "type": "u8"
+        },
+        {
+          "index": false,
+          "name": "positionCustody",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionCollateralCustody",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionSizeUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "positionMint",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "owner",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "pool",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "sizeUsdDelta",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "collateralUsdDelta",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "collateralTokenDelta",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "price",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "priceSlippage",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "feeToken",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "feeUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "openTime",
+          "type": "i64"
+        },
+        {
+          "index": false,
+          "name": "referral",
+          "type": {
+            "option": "publicKey"
+          }
+        },
+        {
+          "index": false,
+          "name": "positionFeeUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "fundingFeeUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "priceImpactFeeUsd",
+          "type": "u64"
+        }
+      ],
+      "name": "InstantIncreasePositionEvent"
+    },
+    {
+      "fields": [
+        {
+          "index": false,
+          "name": "positionKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionSide",
+          "type": "u8"
+        },
+        {
+          "index": false,
+          "name": "positionCustody",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionCollateralCustody",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionSizeUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "positionMint",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "desiredMint",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "hasProfit",
+          "type": "bool"
+        },
+        {
+          "index": false,
+          "name": "pnlDelta",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "owner",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "pool",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "sizeUsdDelta",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "transferAmountUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "transferToken",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "price",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "priceSlippage",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "feeUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "openTime",
+          "type": "i64"
+        },
+        {
+          "index": false,
+          "name": "referral",
+          "type": {
+            "option": "publicKey"
+          }
+        },
+        {
+          "index": false,
+          "name": "positionFeeUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "fundingFeeUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "originalPositionCollateralUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "positionCollateralUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "priceImpactFeeUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "positionOpenTime",
+          "type": "i64"
+        },
+        {
+          "index": false,
+          "name": "positionPrice",
+          "type": "u64"
+        }
+      ],
+      "name": "InstantDecreasePositionEvent"
+    },
+    {
+      "fields": [
+        {
+          "index": false,
+          "name": "owner",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "pool",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionMint",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionCustody",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "depositAmount",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "userTokenAccount",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "time",
+          "type": "i64"
+        }
+      ],
+      "name": "DepositCollateralEvent"
+    },
+    {
+      "fields": [
+        {
+          "index": false,
+          "name": "owner",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "pool",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionMint",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionCustody",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "withdrawAmount",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "userTokenAccount",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "custody",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "previousCollateralAmount",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "collateralAmount",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "collateralAmountUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "marginUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "time",
+          "type": "i64"
+        }
+      ],
+      "name": "WithdrawCollateralEvent"
+    },
+    {
+      "fields": [
+        {
+          "index": false,
+          "name": "owner",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "pool",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionMint",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionCustody",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "sizeCustodyToken",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "collateralAmount",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "collateralAmountUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "marginUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "updateTime",
+          "type": "i64"
+        }
+      ],
+      "name": "BorrowFromCustodyEvent"
+    },
+    {
+      "fields": [
+        {
+          "index": false,
+          "name": "owner",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "pool",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionMint",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionCustody",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "sizeCustodyToken",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "updateTime",
+          "type": "i64"
+        },
+        {
+          "index": false,
+          "name": "interest",
+          "type": "u128"
+        }
+      ],
+      "name": "RepayToCustodyEvent"
+    },
+    {
+      "fields": [
+        {
+          "index": false,
+          "name": "positionKey",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionCustody",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "positionSizeUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "owner",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "pool",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "collateralLockedInUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "collateralLockedInLp",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "remainingCollateralInLp",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "custodyTokenPrice",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "totalBorrowsInUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "liquidationFeeUsd",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "liquidationTime",
+          "type": "i64"
+        }
+      ],
+      "name": "LiquidateBorrowPositionEvent"
+    },
+    {
+      "fields": [
+        {
+          "index": false,
+          "name": "custody",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "stakeAccount",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "stakeInfo",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "stakeRewards",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "custodyTotalStakedAmount",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "currentStakedAmount",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "totalStakingRewards",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "redeemTime",
+          "type": "i64"
+        }
+      ],
+      "name": "RedeemStakeEvent"
+    },
+    {
+      "fields": [
+        {
+          "index": false,
+          "name": "custody",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "stakeAccount",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "stakeInfo",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "stakeRewards",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "custodyTotalStakedAmount",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "totalStakingRewards",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "withdrawAmount",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "withdrawTime",
+          "type": "i64"
+        }
+      ],
+      "name": "WithdrawStakeEvent"
+    },
+    {
+      "fields": [
+        {
+          "index": false,
+          "name": "custody",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "stakeAccount",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "stakeInfo",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "custodyTotalStakedAmount",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "stakeAmount",
+          "type": "u64"
+        },
+        {
+          "index": false,
+          "name": "validatorVoteAccount",
+          "type": "publicKey"
+        },
+        {
+          "index": false,
+          "name": "delegateTime",
+          "type": "i64"
+        }
+      ],
+      "name": "DelegateStakeEvent"
+    }
+  ],
+  "instructions": [
+    {
+      "accounts": [
+        {
+          "isMut": true,
+          "isSigner": true,
+          "name": "upgradeAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "admin"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "transferAuthority"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetualsProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetualsProgramData"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "systemProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenProgram"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "InitParams"
+          }
+        }
+      ],
+      "name": "init"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": true,
+          "isSigner": true,
+          "name": "admin"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "transferAuthority"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "lpTokenMint"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "systemProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "rent"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "AddPoolParams"
+          }
+        }
+      ],
+      "name": "addPool"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": true,
+          "isSigner": true,
+          "name": "admin"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "transferAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "custody"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "custodyTokenAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyTokenMint"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "systemProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "rent"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "AddCustodyParams"
+          }
+        }
+      ],
+      "name": "addCustody"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": true,
+          "isSigner": true,
+          "name": "admin"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "custody"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "SetCustodyConfigParams"
+          }
+        }
+      ],
+      "name": "setCustodyConfig"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "admin"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "pool"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "SetPoolConfigParams"
+          }
+        }
+      ],
+      "name": "setPoolConfig"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "admin"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "perpetuals"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "SetPerpetualsConfigParams"
+          }
+        }
+      ],
+      "name": "setPerpetualsConfig"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "admin"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "newAdmin"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "perpetuals"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "TransferAdminParams"
+          }
+        }
+      ],
+      "name": "transferAdmin"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "keeper"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "transferAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "custody"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "custodyTokenAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyDovesPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyPythnetPriceAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "receivingTokenAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenProgram"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "WithdrawFees2Params"
+          }
+        }
+      ],
+      "name": "withdrawFees2"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": true,
+          "isSigner": true,
+          "name": "admin"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "transferAuthority"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "metadata"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "lpTokenMint"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenMetadataProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "systemProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "rent"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "CreateTokenMetadataParams"
+          }
+        }
+      ],
+      "name": "createTokenMetadata"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": true,
+          "isSigner": true,
+          "name": "tokenLedger"
+        },
+        {
+          "isMut": true,
+          "isSigner": true,
+          "name": "payer"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "systemProgram"
+        }
+      ],
+      "args": [],
+      "name": "createTokenLedger"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": true,
+          "isSigner": true,
+          "name": "keeper"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "custody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "systemProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "rent"
+        }
+      ],
+      "args": [],
+      "name": "reallocCustody"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": true,
+          "isSigner": true,
+          "name": "keeper"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "systemProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "rent"
+        }
+      ],
+      "args": [],
+      "name": "reallocPool"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": true,
+          "isSigner": true,
+          "name": "keeper"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "custody"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "custodyTokenAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "transferAuthority"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "stakeAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "stakeInfo"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "validatorVoteAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "stakeConfig"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "wsolMint"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "tempWsolAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "rent"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "clock"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "stakeHistory"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "stakeProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "systemProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenProgram"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "CreateAndDelegateStakeAccountParams"
+          }
+        }
+      ],
+      "name": "createAndDelegateStakeAccount"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "operator"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "transferAuthority"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "stakeAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "stakeInfo"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "clock"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "stakeProgram"
+        }
+      ],
+      "args": [],
+      "name": "unstake"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": true,
+          "isSigner": true,
+          "name": "keeper"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "custody"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "custodyTokenAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "transferAuthority"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "stakeAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "stakeInfo"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "clock"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "stakeHistory"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "stakeProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "systemProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenProgram"
+        }
+      ],
+      "args": [],
+      "name": "withdrawStake"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "keeper"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "custody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "stakeAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "stakeInfo"
+        }
+      ],
+      "args": [],
+      "name": "redeemStake"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "operator"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "custody"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "OperatorSetCustodyConfigParams"
+          }
+        }
+      ],
+      "name": "operatorSetCustodyConfig"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "operator"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "pool"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "OperatorSetPoolConfigParams"
+          }
+        }
+      ],
+      "name": "operatorSetPoolConfig"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": true,
+          "isSigner": true,
+          "name": "upgradeAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "admin"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "transferAuthority"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "systemProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenProgram"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "TestInitParams"
+          }
+        }
+      ],
+      "name": "testInit"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "admin"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "perpetuals"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "SetTestTimeParams"
+          }
+        }
+      ],
+      "name": "setTestTime"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "tokenLedger"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenProgram"
+        }
+      ],
+      "args": [],
+      "name": "setTokenLedger"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "owner"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "fundingAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "receivingAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "transferAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "receivingCustody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "receivingCustodyDovesPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "receivingCustodyPythnetPriceAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "receivingCustodyTokenAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "dispensingCustody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "dispensingCustodyDovesPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "dispensingCustodyPythnetPriceAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "dispensingCustodyTokenAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "eventAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "Swap2Params"
+          }
+        }
+      ],
+      "name": "swap2"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "owner"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "fundingAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "receivingAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "transferAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "receivingCustody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "receivingCustodyDovesPriceAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "receivingCustodyTokenAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "dispensingCustody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "dispensingCustodyDovesPriceAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "dispensingCustodyTokenAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenLedger"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "instruction"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "eventAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "SwapWithTokenLedgerParams"
+          }
+        }
+      ],
+      "name": "swapWithTokenLedger"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "owner"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "fundingAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "lpTokenAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "transferAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "custody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyDovesPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyPythnetPriceAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "custodyTokenAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "lpTokenMint"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "eventAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "AddLiquidity2Params"
+          }
+        }
+      ],
+      "name": "addLiquidity2"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "owner"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "receivingAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "lpTokenAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "transferAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "custody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyDovesPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyPythnetPriceAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "custodyTokenAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "lpTokenMint"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "eventAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "RemoveLiquidity2Params"
+          }
+        }
+      ],
+      "name": "removeLiquidity2"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": true,
+          "isSigner": true,
+          "name": "owner"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "fundingAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "position"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "positionRequest"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "positionRequestAta"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "collateralCustody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "inputMint"
+        },
+        {
+          "isMut": false,
+          "isOptional": true,
+          "isSigner": false,
+          "name": "referral"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "associatedTokenProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "systemProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "eventAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "CreateIncreasePositionMarketRequestParams"
+          }
+        }
+      ],
+      "name": "createIncreasePositionMarketRequest"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": true,
+          "isSigner": true,
+          "name": "owner"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "receivingAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "position"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "positionRequest"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "positionRequestAta"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyDovesPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyPythnetPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "collateralCustody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "desiredMint"
+        },
+        {
+          "isMut": false,
+          "isOptional": true,
+          "isSigner": false,
+          "name": "referral"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "associatedTokenProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "systemProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "eventAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "CreateDecreasePositionRequest2Params"
+          }
+        }
+      ],
+      "name": "createDecreasePositionRequest2"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": true,
+          "isSigner": true,
+          "name": "owner"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "receivingAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "position"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "positionRequest"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "positionRequestAta"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "collateralCustody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "desiredMint"
+        },
+        {
+          "isMut": false,
+          "isOptional": true,
+          "isSigner": false,
+          "name": "referral"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "associatedTokenProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "systemProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "eventAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "CreateDecreasePositionMarketRequestParams"
+          }
+        }
+      ],
+      "name": "createDecreasePositionMarketRequest"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "owner"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "position"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "positionRequest"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyDovesPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyPythnetPriceAccount"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "UpdateDecreasePositionRequest2Params"
+          }
+        }
+      ],
+      "name": "updateDecreasePositionRequest2"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isOptional": true,
+          "isSigner": true,
+          "name": "keeper"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "owner"
+        },
+        {
+          "isMut": true,
+          "isOptional": true,
+          "isSigner": false,
+          "name": "ownerAta"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "positionRequest"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "positionRequestAta"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "position"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "eventAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "ClosePositionRequestParams"
+          }
+        }
+      ],
+      "name": "closePositionRequest"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": true,
+          "isOptional": true,
+          "isSigner": true,
+          "name": "keeper"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "owner"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "ownerAta"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "positionRequest"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "positionRequestAta"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "position"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "mint"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "systemProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "associatedTokenProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "eventAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "program"
+        }
+      ],
+      "args": [],
+      "name": "closePositionRequest2"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "keeper"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "positionRequest"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "positionRequestAta"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "position"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "custody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyDovesPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyPythnetPriceAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "collateralCustody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "collateralCustodyDovesPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "collateralCustodyPythnetPriceAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "collateralCustodyTokenAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "eventAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "IncreasePosition4Params"
+          }
+        }
+      ],
+      "name": "increasePosition4"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "keeper"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "keeperAta"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "positionRequest"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "positionRequestAta"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "position"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "collateralCustody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "collateralCustodyTokenAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "instruction"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "eventAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "IncreasePositionPreSwapParams"
+          }
+        }
+      ],
+      "name": "increasePositionPreSwap"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "keeper"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "positionRequest"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "positionRequestAta"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "position"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "custody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyDovesPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyPythnetPriceAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "collateralCustody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "collateralCustodyDovesPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "collateralCustodyPythnetPriceAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "collateralCustodyTokenAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "receivingCustody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "receivingCustodyDovesPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "receivingCustodyPythnetPriceAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "receivingCustodyTokenAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "eventAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "IncreasePositionWithInternalSwapParams"
+          }
+        }
+      ],
+      "name": "increasePositionWithInternalSwap"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "keeper"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "owner"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "transferAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "positionRequest"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "positionRequestAta"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "position"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "custody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyDovesPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyPythnetPriceAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "collateralCustody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "collateralCustodyDovesPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "collateralCustodyPythnetPriceAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "collateralCustodyTokenAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "eventAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "DecreasePosition4Params"
+          }
+        }
+      ],
+      "name": "decreasePosition4"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "keeper"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "owner"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "transferAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "positionRequest"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "positionRequestAta"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "position"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "custody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyDovesPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyPythnetPriceAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "collateralCustody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "collateralCustodyDovesPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "collateralCustodyPythnetPriceAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "collateralCustodyTokenAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "dispensingCustody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "dispensingCustodyDovesPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "dispensingCustodyPythnetPriceAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "dispensingCustodyTokenAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "eventAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "DecreasePositionWithInternalSwapParams"
+          }
+        }
+      ],
+      "name": "decreasePositionWithInternalSwap"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "keeper"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "owner"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "transferAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "positionRequest"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "positionRequestAta"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "position"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "custody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyDovesPriceAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "collateralCustody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "collateralCustodyDovesPriceAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "collateralCustodyTokenAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "eventAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "DecreasePositionWithTpslParams"
+          }
+        }
+      ],
+      "name": "decreasePositionWithTpsl"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "keeper"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "owner"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "transferAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "positionRequest"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "positionRequestAta"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "position"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "custody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyDovesPriceAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "collateralCustody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "collateralCustodyDovesPriceAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "collateralCustodyTokenAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "dispensingCustody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "dispensingCustodyDovesPriceAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "dispensingCustodyTokenAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "eventAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "DecreasePositionWithTpslAndInternalSwapParams"
+          }
+        }
+      ],
+      "name": "decreasePositionWithTpslAndInternalSwap"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "signer"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "position"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "custody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyDovesPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyPythnetPriceAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "collateralCustody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "collateralCustodyDovesPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "collateralCustodyPythnetPriceAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "collateralCustodyTokenAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "eventAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "LiquidateFullPosition4Params"
+          }
+        }
+      ],
+      "name": "liquidateFullPosition4"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "keeper"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "pool"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "RefreshAssetsUnderManagementParams"
+          }
+        }
+      ],
+      "name": "refreshAssetsUnderManagement"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "keeper"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "custody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "pool"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "SetMaxGlobalSizesParams"
+          }
+        }
+      ],
+      "name": "setMaxGlobalSizes"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "keeper"
+        },
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "apiKeeper"
+        },
+        {
+          "isMut": true,
+          "isSigner": true,
+          "name": "owner"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "receivingAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "position"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "positionRequest"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "positionRequestAta"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyDovesPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyPythnetPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "collateralCustody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "desiredMint"
+        },
+        {
+          "isMut": false,
+          "isOptional": true,
+          "isSigner": false,
+          "name": "referral"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "associatedTokenProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "systemProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "eventAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "InstantCreateTpslParams"
+          }
+        }
+      ],
+      "name": "instantCreateTpsl"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "keeper"
+        },
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "apiKeeper"
+        },
+        {
+          "isMut": true,
+          "isSigner": true,
+          "name": "owner"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "fundingAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "position"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "positionRequest"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "positionRequestAta"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyDovesPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyPythnetPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "collateralCustody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "inputMint"
+        },
+        {
+          "isMut": false,
+          "isOptional": true,
+          "isSigner": false,
+          "name": "referral"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "associatedTokenProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "systemProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "eventAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "InstantCreateLimitOrderParams"
+          }
+        }
+      ],
+      "name": "instantCreateLimitOrder"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "keeper"
+        },
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "apiKeeper"
+        },
+        {
+          "isMut": true,
+          "isSigner": true,
+          "name": "owner"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "fundingAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "position"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "custody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyDovesPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyPythnetPriceAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "collateralCustody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "collateralCustodyDovesPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "collateralCustodyPythnetPriceAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "collateralCustodyTokenAccount"
+        },
+        {
+          "isMut": false,
+          "isOptional": true,
+          "isSigner": false,
+          "name": "tokenLedger"
+        },
+        {
+          "isMut": false,
+          "isOptional": true,
+          "isSigner": false,
+          "name": "referral"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "systemProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "eventAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "InstantIncreasePositionParams"
+          }
+        }
+      ],
+      "name": "instantIncreasePosition"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "keeper"
+        },
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "apiKeeper"
+        },
+        {
+          "isMut": true,
+          "isSigner": true,
+          "name": "owner"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "receivingAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "transferAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "position"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "custody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyDovesPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyPythnetPriceAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "collateralCustody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "collateralCustodyDovesPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "collateralCustodyPythnetPriceAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "collateralCustodyTokenAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "desiredMint"
+        },
+        {
+          "isMut": false,
+          "isOptional": true,
+          "isSigner": false,
+          "name": "referral"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "associatedTokenProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "systemProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "eventAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "InstantDecreasePositionParams"
+          }
+        }
+      ],
+      "name": "instantDecreasePosition"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "keeper"
+        },
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "apiKeeper"
+        },
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "owner"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "position"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "positionRequest"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyDovesPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyPythnetPriceAccount"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "InstantUpdateLimitOrderParams"
+          }
+        }
+      ],
+      "name": "instantUpdateLimitOrder"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "keeper"
+        },
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "apiKeeper"
+        },
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "owner"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "position"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "positionRequest"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyDovesPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyPythnetPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "eventAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "InstantUpdateTpslParams"
+          }
+        }
+      ],
+      "name": "instantUpdateTpsl"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyDovesPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyPythnetPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "lpTokenMint"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "GetAddLiquidityAmountAndFee2Params"
+          }
+        }
+      ],
+      "name": "getAddLiquidityAmountAndFee2",
+      "returns": {
+        "defined": "AmountAndFee"
+      }
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyDovesPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custodyPythnetPriceAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "lpTokenMint"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "GetRemoveLiquidityAmountAndFee2Params"
+          }
+        }
+      ],
+      "name": "getRemoveLiquidityAmountAndFee2",
+      "returns": {
+        "defined": "AmountAndFee"
+      }
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "pool"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "GetAssetsUnderManagement2Params"
+          }
+        }
+      ],
+      "name": "getAssetsUnderManagement2",
+      "returns": "u128"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": true,
+          "isSigner": true,
+          "name": "owner"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "custody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "transferAuthority"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "borrowPosition"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "custodyTokenAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "userTokenAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "lpTokenMint"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "eventAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "BorrowFromCustodyParams"
+          }
+        }
+      ],
+      "name": "borrowFromCustody"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": true,
+          "isSigner": true,
+          "name": "owner"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "custody"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "borrowPosition"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "custodyTokenAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "userTokenAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "eventAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "RepayToCustodyParams"
+          }
+        }
+      ],
+      "name": "repayToCustody"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": true,
+          "isSigner": true,
+          "name": "owner"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "custody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "transferAuthority"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "borrowPosition"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "collateralTokenAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "userTokenAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "lpTokenMint"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "systemProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "eventAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "DepositParams"
+          }
+        }
+      ],
+      "name": "depositCollateralForBorrows"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": true,
+          "isSigner": true,
+          "name": "owner"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "custody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "transferAuthority"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "borrowPosition"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "collateralTokenAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "userTokenAccount"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "lpTokenMint"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "eventAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "WithdrawParams"
+          }
+        }
+      ],
+      "name": "withdrawCollateralForBorrows"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "signer"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "perpetuals"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "pool"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "custody"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "transferAuthority"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "borrowPosition"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "collateralTokenAccount"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "lpTokenMint"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "tokenProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "eventAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "LiquidateBorrowPositionParams"
+          }
+        }
+      ],
+      "name": "liquidateBorrowPosition"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": true,
+          "isSigner": true,
+          "name": "owner"
+        },
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "borrowPosition"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "systemProgram"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "eventAuthority"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": "CloseBorrowPositionParams"
+          }
+        }
+      ],
+      "name": "closeBorrowPosition"
+    }
+  ],
+  "name": "perpetuals",
+  "types": [
+    {
+      "name": "AddCustodyParams",
+      "type": {
+        "fields": [
+          {
+            "name": "isStable",
+            "type": "bool"
+          },
+          {
+            "name": "oracle",
+            "type": {
+              "defined": "OracleParams"
+            }
+          },
+          {
+            "name": "pricing",
+            "type": {
+              "defined": "PricingParams"
+            }
+          },
+          {
+            "name": "permissions",
+            "type": {
+              "defined": "Permissions"
+            }
+          },
+          {
+            "name": "hourlyFundingDbps",
+            "type": "u64"
+          },
+          {
+            "name": "targetRatioBps",
+            "type": "u64"
+          },
+          {
+            "name": "increasePositionBps",
+            "type": "u64"
+          },
+          {
+            "name": "decreasePositionBps",
+            "type": "u64"
+          },
+          {
+            "name": "dovesOracle",
+            "type": "publicKey"
+          },
+          {
+            "name": "maxPositionSizeUsd",
+            "type": "u64"
+          },
+          {
+            "name": "jumpRate",
+            "type": {
+              "defined": "JumpRateState"
+            }
+          },
+          {
+            "name": "priceImpactFeeFactor",
+            "type": "u64"
+          },
+          {
+            "name": "priceImpactExponent",
+            "type": "f32"
+          },
+          {
+            "name": "deltaImbalanceThresholdDecimal",
+            "type": "u64"
+          },
+          {
+            "name": "maxFeeBps",
+            "type": "u64"
+          },
+          {
+            "name": "dovesAgOracle",
+            "type": "publicKey"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "AddLiquidity2Params",
+      "type": {
+        "fields": [
+          {
+            "name": "tokenAmountIn",
+            "type": "u64"
+          },
+          {
+            "name": "minLpAmountOut",
+            "type": "u64"
+          },
+          {
+            "name": "tokenAmountPreSwap",
+            "type": {
+              "option": "u64"
+            }
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "AddPoolParams",
+      "type": {
+        "fields": [
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "type": {
+              "defined": "Limit"
+            }
+          },
+          {
+            "name": "fees",
+            "type": {
+              "defined": "Fees"
+            }
+          },
+          {
+            "name": "maxRequestExecutionSec",
+            "type": "i64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "BorrowFromCustodyParams",
+      "type": {
+        "fields": [
+          {
+            "name": "amount",
+            "type": "u64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "CloseBorrowPositionParams",
+      "type": {
+        "fields": [],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "ClosePositionRequestParams",
+      "type": {
+        "fields": [],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "CreateAndDelegateStakeAccountParams",
+      "type": {
+        "fields": [
+          {
+            "name": "stakeAccountIndex",
+            "type": "u64"
+          },
+          {
+            "name": "stakeAmountLamports",
+            "type": "u64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "CreateDecreasePositionMarketRequestParams",
+      "type": {
+        "fields": [
+          {
+            "name": "collateralUsdDelta",
+            "type": "u64"
+          },
+          {
+            "name": "sizeUsdDelta",
+            "type": "u64"
+          },
+          {
+            "name": "priceSlippage",
+            "type": "u64"
+          },
+          {
+            "name": "jupiterMinimumOut",
+            "type": {
+              "option": "u64"
+            }
+          },
+          {
+            "name": "entirePosition",
+            "type": {
+              "option": "bool"
+            }
+          },
+          {
+            "name": "counter",
+            "type": "u64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "CreateDecreasePositionRequest2Params",
+      "type": {
+        "fields": [
+          {
+            "name": "collateralUsdDelta",
+            "type": "u64"
+          },
+          {
+            "name": "sizeUsdDelta",
+            "type": "u64"
+          },
+          {
+            "name": "requestType",
+            "type": {
+              "defined": "RequestType"
+            }
+          },
+          {
+            "name": "priceSlippage",
+            "type": {
+              "option": "u64"
+            }
+          },
+          {
+            "name": "jupiterMinimumOut",
+            "type": {
+              "option": "u64"
+            }
+          },
+          {
+            "name": "triggerPrice",
+            "type": {
+              "option": "u64"
+            }
+          },
+          {
+            "name": "triggerAboveThreshold",
+            "type": {
+              "option": "bool"
+            }
+          },
+          {
+            "name": "entirePosition",
+            "type": {
+              "option": "bool"
+            }
+          },
+          {
+            "name": "counter",
+            "type": "u64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "CreateIncreasePositionMarketRequestParams",
+      "type": {
+        "fields": [
+          {
+            "name": "sizeUsdDelta",
+            "type": "u64"
+          },
+          {
+            "name": "collateralTokenDelta",
+            "type": "u64"
+          },
+          {
+            "name": "side",
+            "type": {
+              "defined": "Side"
+            }
+          },
+          {
+            "name": "priceSlippage",
+            "type": "u64"
+          },
+          {
+            "name": "jupiterMinimumOut",
+            "type": {
+              "option": "u64"
+            }
+          },
+          {
+            "name": "counter",
+            "type": "u64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "CreateTokenMetadataParams",
+      "type": {
+        "fields": [
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "symbol",
+            "type": "string"
+          },
+          {
+            "name": "uri",
+            "type": "string"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "DecreasePosition4Params",
+      "type": {
+        "fields": [],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "DecreasePositionWithInternalSwapParams",
+      "type": {
+        "fields": [],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "DecreasePositionWithTpslAndInternalSwapParams",
+      "type": {
+        "fields": [],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "DecreasePositionWithTpslParams",
+      "type": {
+        "fields": [],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "DepositParams",
+      "type": {
+        "fields": [
+          {
+            "name": "amount",
+            "type": "u64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "GetAddLiquidityAmountAndFee2Params",
+      "type": {
+        "fields": [
+          {
+            "name": "tokenAmountIn",
+            "type": "u64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "GetAssetsUnderManagement2Params",
+      "type": {
+        "fields": [
+          {
+            "name": "mode",
+            "type": {
+              "option": {
+                "defined": "PriceCalcMode"
+              }
+            }
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "GetRemoveLiquidityAmountAndFee2Params",
+      "type": {
+        "fields": [
+          {
+            "name": "lpAmountIn",
+            "type": "u64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "IncreasePosition4Params",
+      "type": {
+        "fields": [],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "IncreasePositionPreSwapParams",
+      "type": {
+        "fields": [],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "IncreasePositionWithInternalSwapParams",
+      "type": {
+        "fields": [],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "InitParams",
+      "type": {
+        "fields": [
+          {
+            "name": "allowSwap",
+            "type": "bool"
+          },
+          {
+            "name": "allowAddLiquidity",
+            "type": "bool"
+          },
+          {
+            "name": "allowRemoveLiquidity",
+            "type": "bool"
+          },
+          {
+            "name": "allowIncreasePosition",
+            "type": "bool"
+          },
+          {
+            "name": "allowDecreasePosition",
+            "type": "bool"
+          },
+          {
+            "name": "allowCollateralWithdrawal",
+            "type": "bool"
+          },
+          {
+            "name": "allowLiquidatePosition",
+            "type": "bool"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "InstantCreateLimitOrderParams",
+      "type": {
+        "fields": [
+          {
+            "name": "sizeUsdDelta",
+            "type": "u64"
+          },
+          {
+            "name": "collateralTokenDelta",
+            "type": "u64"
+          },
+          {
+            "name": "side",
+            "type": {
+              "defined": "Side"
+            }
+          },
+          {
+            "name": "triggerPrice",
+            "type": "u64"
+          },
+          {
+            "name": "triggerAboveThreshold",
+            "type": "bool"
+          },
+          {
+            "name": "counter",
+            "type": "u64"
+          },
+          {
+            "name": "requestTime",
+            "type": "i64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "InstantCreateTpslParams",
+      "type": {
+        "fields": [
+          {
+            "name": "collateralUsdDelta",
+            "type": "u64"
+          },
+          {
+            "name": "sizeUsdDelta",
+            "type": "u64"
+          },
+          {
+            "name": "triggerPrice",
+            "type": "u64"
+          },
+          {
+            "name": "triggerAboveThreshold",
+            "type": "bool"
+          },
+          {
+            "name": "entirePosition",
+            "type": "bool"
+          },
+          {
+            "name": "counter",
+            "type": "u64"
+          },
+          {
+            "name": "requestTime",
+            "type": "i64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "InstantDecreasePositionParams",
+      "type": {
+        "fields": [
+          {
+            "name": "collateralUsdDelta",
+            "type": "u64"
+          },
+          {
+            "name": "sizeUsdDelta",
+            "type": "u64"
+          },
+          {
+            "name": "priceSlippage",
+            "type": "u64"
+          },
+          {
+            "name": "entirePosition",
+            "type": {
+              "option": "bool"
+            }
+          },
+          {
+            "name": "requestTime",
+            "type": "i64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "InstantIncreasePositionParams",
+      "type": {
+        "fields": [
+          {
+            "name": "sizeUsdDelta",
+            "type": "u64"
+          },
+          {
+            "name": "collateralTokenDelta",
+            "type": {
+              "option": "u64"
+            }
+          },
+          {
+            "name": "side",
+            "type": {
+              "defined": "Side"
+            }
+          },
+          {
+            "name": "priceSlippage",
+            "type": "u64"
+          },
+          {
+            "name": "requestTime",
+            "type": "i64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "InstantUpdateLimitOrderParams",
+      "type": {
+        "fields": [
+          {
+            "name": "sizeUsdDelta",
+            "type": "u64"
+          },
+          {
+            "name": "triggerPrice",
+            "type": "u64"
+          },
+          {
+            "name": "requestTime",
+            "type": "i64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "InstantUpdateTpslParams",
+      "type": {
+        "fields": [
+          {
+            "name": "sizeUsdDelta",
+            "type": "u64"
+          },
+          {
+            "name": "triggerPrice",
+            "type": "u64"
+          },
+          {
+            "name": "requestTime",
+            "type": "i64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "LiquidateBorrowPositionParams",
+      "type": {
+        "fields": [],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "LiquidateFullPosition4Params",
+      "type": {
+        "fields": [],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "OperatorSetCustodyConfigParams",
+      "type": {
+        "fields": [
+          {
+            "name": "pricing",
+            "type": {
+              "defined": "PricingParams"
+            }
+          },
+          {
+            "name": "hourlyFundingDbps",
+            "type": "u64"
+          },
+          {
+            "name": "targetRatioBps",
+            "type": "u64"
+          },
+          {
+            "name": "increasePositionBps",
+            "type": "u64"
+          },
+          {
+            "name": "decreasePositionBps",
+            "type": "u64"
+          },
+          {
+            "name": "maxPositionSizeUsd",
+            "type": "u64"
+          },
+          {
+            "name": "jumpRate",
+            "type": {
+              "defined": "JumpRateState"
+            }
+          },
+          {
+            "name": "priceImpactFeeFactor",
+            "type": "u64"
+          },
+          {
+            "name": "priceImpactExponent",
+            "type": "f32"
+          },
+          {
+            "name": "deltaImbalanceThresholdDecimal",
+            "type": "u64"
+          },
+          {
+            "name": "maxFeeBps",
+            "type": "u64"
+          },
+          {
+            "name": "borrowLendParameters",
+            "type": {
+              "defined": "BorrowLendParams"
+            }
+          },
+          {
+            "name": "borrowHourlyFundingDbps",
+            "type": "u64"
+          },
+          {
+            "name": "borrowLimitInTokenAmount",
+            "type": "u64"
+          },
+          {
+            "name": "minInterestFeeBps",
+            "type": "u64"
+          },
+          {
+            "name": "minInterestFeeGracePeriodSeconds",
+            "type": "u64"
+          },
+          {
+            "name": "maxTotalStakedAmountLamports",
+            "type": "u64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "OperatorSetPoolConfigParams",
+      "type": {
+        "fields": [
+          {
+            "name": "fees",
+            "type": {
+              "defined": "Fees"
+            }
+          },
+          {
+            "name": "limit",
+            "type": {
+              "defined": "Limit"
+            }
+          },
+          {
+            "name": "maxRequestExecutionSec",
+            "type": "i64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "RefreshAssetsUnderManagementParams",
+      "type": {
+        "fields": [],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "RemoveLiquidity2Params",
+      "type": {
+        "fields": [
+          {
+            "name": "lpAmountIn",
+            "type": "u64"
+          },
+          {
+            "name": "minAmountOut",
+            "type": "u64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "RepayToCustodyParams",
+      "type": {
+        "fields": [
+          {
+            "name": "amount",
+            "type": "u64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "SetCustodyConfigParams",
+      "type": {
+        "fields": [
+          {
+            "name": "oracle",
+            "type": {
+              "defined": "OracleParams"
+            }
+          },
+          {
+            "name": "pricing",
+            "type": {
+              "defined": "PricingParams"
+            }
+          },
+          {
+            "name": "permissions",
+            "type": {
+              "defined": "Permissions"
+            }
+          },
+          {
+            "name": "hourlyFundingDbps",
+            "type": "u64"
+          },
+          {
+            "name": "targetRatioBps",
+            "type": "u64"
+          },
+          {
+            "name": "increasePositionBps",
+            "type": "u64"
+          },
+          {
+            "name": "decreasePositionBps",
+            "type": "u64"
+          },
+          {
+            "name": "dovesOracle",
+            "type": "publicKey"
+          },
+          {
+            "name": "maxPositionSizeUsd",
+            "type": "u64"
+          },
+          {
+            "name": "jumpRate",
+            "type": {
+              "defined": "JumpRateState"
+            }
+          },
+          {
+            "name": "priceImpactFeeFactor",
+            "type": "u64"
+          },
+          {
+            "name": "priceImpactExponent",
+            "type": "f32"
+          },
+          {
+            "name": "deltaImbalanceThresholdDecimal",
+            "type": "u64"
+          },
+          {
+            "name": "maxFeeBps",
+            "type": "u64"
+          },
+          {
+            "name": "dovesAgOracle",
+            "type": "publicKey"
+          },
+          {
+            "name": "borrowLendParameters",
+            "type": {
+              "defined": "BorrowLendParams"
+            }
+          },
+          {
+            "name": "borrowHourlyFundingDbps",
+            "type": "u64"
+          },
+          {
+            "name": "borrowLimitInTokenAmount",
+            "type": "u64"
+          },
+          {
+            "name": "minInterestFeeBps",
+            "type": "u64"
+          },
+          {
+            "name": "minInterestFeeGracePeriodSeconds",
+            "type": "u64"
+          },
+          {
+            "name": "maxTotalStakedAmountLamports",
+            "type": "u64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "SetMaxGlobalSizesParams",
+      "type": {
+        "fields": [
+          {
+            "name": "maxGlobalLongSize",
+            "type": "u64"
+          },
+          {
+            "name": "maxGlobalShortSize",
+            "type": "u64"
+          },
+          {
+            "name": "recoveryId",
+            "type": "u8"
+          },
+          {
+            "name": "signature",
+            "type": {
+              "array": [
+                "u8",
+                64
+              ]
+            }
+          },
+          {
+            "name": "referenceId",
+            "type": {
+              "array": [
+                "u8",
+                16
+              ]
+            }
+          },
+          {
+            "name": "timestamp",
+            "type": "u64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "SetPerpetualsConfigParams",
+      "type": {
+        "fields": [
+          {
+            "name": "permissions",
+            "type": {
+              "defined": "Permissions"
+            }
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "SetPoolConfigParams",
+      "type": {
+        "fields": [
+          {
+            "name": "fees",
+            "type": {
+              "defined": "Fees"
+            }
+          },
+          {
+            "name": "limit",
+            "type": {
+              "defined": "Limit"
+            }
+          },
+          {
+            "name": "maxRequestExecutionSec",
+            "type": "i64"
+          },
+          {
+            "name": "parameterUpdateOracle",
+            "type": {
+              "defined": "Secp256k1Pubkey"
+            }
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "SetTestTimeParams",
+      "type": {
+        "fields": [
+          {
+            "name": "time",
+            "type": "i64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "Swap2Params",
+      "type": {
+        "fields": [
+          {
+            "name": "amountIn",
+            "type": "u64"
+          },
+          {
+            "name": "minAmountOut",
+            "type": "u64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "SwapWithTokenLedgerParams",
+      "type": {
+        "fields": [
+          {
+            "name": "minAmountOut",
+            "type": "u64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "TestInitParams",
+      "type": {
+        "fields": [
+          {
+            "name": "allowSwap",
+            "type": "bool"
+          },
+          {
+            "name": "allowAddLiquidity",
+            "type": "bool"
+          },
+          {
+            "name": "allowRemoveLiquidity",
+            "type": "bool"
+          },
+          {
+            "name": "allowIncreasePosition",
+            "type": "bool"
+          },
+          {
+            "name": "allowDecreasePosition",
+            "type": "bool"
+          },
+          {
+            "name": "allowCollateralWithdrawal",
+            "type": "bool"
+          },
+          {
+            "name": "allowLiquidatePosition",
+            "type": "bool"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "TransferAdminParams",
+      "type": {
+        "fields": [],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "UpdateDecreasePositionRequest2Params",
+      "type": {
+        "fields": [
+          {
+            "name": "sizeUsdDelta",
+            "type": "u64"
+          },
+          {
+            "name": "triggerPrice",
+            "type": "u64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "WithdrawParams",
+      "type": {
+        "fields": [
+          {
+            "name": "amount",
+            "type": "u64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "WithdrawFees2Params",
+      "type": {
+        "fields": [],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "PriceImpactBuffer",
+      "type": {
+        "fields": [
+          {
+            "name": "openInterest",
+            "type": {
+              "array": [
+                "i64",
+                60
+              ]
+            }
+          },
+          {
+            "name": "lastUpdated",
+            "type": "i64"
+          },
+          {
+            "name": "feeFactor",
+            "type": "u64"
+          },
+          {
+            "name": "exponent",
+            "type": "f32"
+          },
+          {
+            "name": "deltaImbalanceThresholdDecimal",
+            "type": "u64"
+          },
+          {
+            "name": "maxFeeBps",
+            "type": "u64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "Assets",
+      "type": {
+        "fields": [
+          {
+            "name": "feesReserves",
+            "type": "u64"
+          },
+          {
+            "name": "owned",
+            "type": "u64"
+          },
+          {
+            "name": "locked",
+            "type": "u64"
+          },
+          {
+            "name": "guaranteedUsd",
+            "type": "u64"
+          },
+          {
+            "name": "globalShortSizes",
+            "type": "u64"
+          },
+          {
+            "name": "globalShortAveragePrices",
+            "type": "u64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "PricingParams",
+      "type": {
+        "fields": [
+          {
+            "name": "tradeImpactFeeScalar",
+            "type": "u64"
+          },
+          {
+            "name": "buffer",
+            "type": "u64"
+          },
+          {
+            "name": "swapSpread",
+            "type": "u64"
+          },
+          {
+            "name": "maxLeverage",
+            "type": "u64"
+          },
+          {
+            "name": "maxGlobalLongSizes",
+            "type": "u64"
+          },
+          {
+            "name": "maxGlobalShortSizes",
+            "type": "u64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "FundingRateState",
+      "type": {
+        "fields": [
+          {
+            "name": "cumulativeInterestRate",
+            "type": "u128"
+          },
+          {
+            "name": "lastUpdate",
+            "type": "i64"
+          },
+          {
+            "name": "hourlyFundingDbps",
+            "type": "u64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "JumpRateState",
+      "type": {
+        "fields": [
+          {
+            "name": "minRateBps",
+            "type": "u64"
+          },
+          {
+            "name": "maxRateBps",
+            "type": "u64"
+          },
+          {
+            "name": "targetRateBps",
+            "type": "u64"
+          },
+          {
+            "name": "targetUtilizationRate",
+            "type": "u64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "BorrowLendParams",
+      "type": {
+        "fields": [
+          {
+            "name": "borrowsLimitInBps",
+            "type": "u64"
+          },
+          {
+            "name": "maintainanceMarginBps",
+            "type": "u64"
+          },
+          {
+            "name": "protocolFeeBps",
+            "type": "u64"
+          },
+          {
+            "name": "liquidationMargin",
+            "type": "u64"
+          },
+          {
+            "name": "liquidationFeeBps",
+            "type": "u64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "OraclePrice",
+      "type": {
+        "fields": [
+          {
+            "name": "price",
+            "type": "u64"
+          },
+          {
+            "name": "exponent",
+            "type": "i32"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "Price",
+      "type": {
+        "fields": [
+          {
+            "name": "price",
+            "type": "u64"
+          },
+          {
+            "name": "expo",
+            "type": "i32"
+          },
+          {
+            "name": "publishTime",
+            "type": "i64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "OracleParams",
+      "type": {
+        "fields": [
+          {
+            "name": "oracleAccount",
+            "type": "publicKey"
+          },
+          {
+            "name": "oracleType",
+            "type": {
+              "defined": "OracleType"
+            }
+          },
+          {
+            "name": "buffer",
+            "type": "u64"
+          },
+          {
+            "name": "maxPriceAgeSec",
+            "type": "u32"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "AmountAndFee",
+      "type": {
+        "fields": [
+          {
+            "name": "amount",
+            "type": "u64"
+          },
+          {
+            "name": "fee",
+            "type": "u64"
+          },
+          {
+            "name": "feeBps",
+            "type": "u64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "Permissions",
+      "type": {
+        "fields": [
+          {
+            "name": "allowSwap",
+            "type": "bool"
+          },
+          {
+            "name": "allowAddLiquidity",
+            "type": "bool"
+          },
+          {
+            "name": "allowRemoveLiquidity",
+            "type": "bool"
+          },
+          {
+            "name": "allowIncreasePosition",
+            "type": "bool"
+          },
+          {
+            "name": "allowDecreasePosition",
+            "type": "bool"
+          },
+          {
+            "name": "allowCollateralWithdrawal",
+            "type": "bool"
+          },
+          {
+            "name": "allowLiquidatePosition",
+            "type": "bool"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "Fees",
+      "type": {
+        "fields": [
+          {
+            "name": "swapMultiplier",
+            "type": "u64"
+          },
+          {
+            "name": "stableSwapMultiplier",
+            "type": "u64"
+          },
+          {
+            "name": "addRemoveLiquidityBps",
+            "type": "u64"
+          },
+          {
+            "name": "swapBps",
+            "type": "u64"
+          },
+          {
+            "name": "taxBps",
+            "type": "u64"
+          },
+          {
+            "name": "stableSwapBps",
+            "type": "u64"
+          },
+          {
+            "name": "stableSwapTaxBps",
+            "type": "u64"
+          },
+          {
+            "name": "liquidationRewardBps",
+            "type": "u64"
+          },
+          {
+            "name": "protocolShareBps",
+            "type": "u64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "PoolApr",
+      "type": {
+        "fields": [
+          {
+            "name": "lastUpdated",
+            "type": "i64"
+          },
+          {
+            "name": "feeAprBps",
+            "type": "u64"
+          },
+          {
+            "name": "realizedFeeUsd",
+            "type": "u64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "Limit",
+      "type": {
+        "fields": [
+          {
+            "name": "maxAumUsd",
+            "type": "u128"
+          },
+          {
+            "name": "tokenWeightageBufferBps",
+            "type": "u128"
+          },
+          {
+            "name": "buffer",
+            "type": "u64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "Secp256k1Pubkey",
+      "type": {
+        "fields": [
+          {
+            "name": "prefix",
+            "type": "u8"
+          },
+          {
+            "name": "key",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "PriceImpactMechanism",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "TradeSize"
+          },
+          {
+            "name": "DeltaImbalance"
+          }
+        ]
+      }
+    },
+    {
+      "name": "OracleType",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "None"
+          },
+          {
+            "name": "Test"
+          },
+          {
+            "name": "Pyth"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PriceCalcMode",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Min"
+          },
+          {
+            "name": "Max"
+          },
+          {
+            "name": "Ignore"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PriceStaleTolerance",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Strict"
+          },
+          {
+            "name": "Loose"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TradePoolType",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Increase"
+          },
+          {
+            "name": "Decrease"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RequestType",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Market"
+          },
+          {
+            "name": "Trigger"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RequestChange",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "None"
+          },
+          {
+            "name": "Increase"
+          },
+          {
+            "name": "Decrease"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Side",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "None"
+          },
+          {
+            "name": "Long"
+          },
+          {
+            "name": "Short"
+          }
+        ]
+      }
+    }
+  ],
+  "version": "0.1.0"
+}

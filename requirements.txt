@@ -1,0 +1,5 @@
+aiohttp>=3.9
+anchorpy>=0.16
+python-dotenv>=1.0
+solana>=0.30
+solders>=0.21
